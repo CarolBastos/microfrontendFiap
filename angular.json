@@ -84,8 +84,8 @@
 					},
 					"defaultConfiguration": "development",
 					"options": {
-						"port": 4300,
-						"publicHost": "http://localhost:4300",
+						"port": 4201,
+						"publicHost": "http://localhost:4201",
 						"extraWebpackConfig": "projects/microfrontend-app/webpack.config.js"
 					}
 				},
@@ -196,8 +196,8 @@
 					},
 					"defaultConfiguration": "development",
 					"options": {
-						"port": 4300,
-						"publicHost": "http://localhost:4300",
+						"port": 4200,
+						"publicHost": "http://localhost:4200",
 						"extraWebpackConfig": "projects/host-app/webpack.config.js"
 					}
 				},
