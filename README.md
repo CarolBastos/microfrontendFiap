@@ -1,59 +1,55 @@
-# MicrofrontendFiap
+# 🚀 Microfrontends com Angular e Module Federation  
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.4.
+Este repositório contém um exemplo de arquitetura **microfrontend** em Angular, utilizando **Webpack Module Federation** para dividir a aplicação em múltiplos módulos independentes.  
 
-## Development server
+## 📌 **Comandos Principais**  
 
-To start a local development server, run:
+### **Criar o projeto principal (Shell/Host)**  
+```sh
+ng new microfrontendFiap --create-application="false"
+```
+🔹 **O que esse comando faz?**  
+- Cria um novo workspace Angular chamado `microfrontendFiap`.  
+- O argumento `--create-application="false"` impede a criação automática de uma aplicação dentro do workspace, permitindo que sub-aplicações sejam adicionadas manualmente.  
 
-```bash
-ng serve
+---
+
+### **Criar um Microfrontend (Remote)**  
+```sh
+ng g application microfrontend-app --routing --no-standalone
+```
+🔹 **O que esse comando faz?**  
+- Gera uma nova aplicação Angular dentro do workspace.  
+- O argumento `--routing` adiciona suporte a roteamento no microfrontend.  
+- O argumento `--no-standalone` cria a aplicação no formato tradicional baseado em `NgModule`, em vez da nova API de componentes standalone do Angular 15+.  
+
+---
+
+### **Adicionar suporte a Module Federation**  
+Execute o seguinte comando dentro do workspace para instalar **Module Federation**:  
+```sh
+ng add @angular-architects/module-federation --project microfront-app --port 4300
+```
+Escolha se a aplicação será **Host (shell)** ou **Remote (microfrontend)** quando solicitado.  
+
+## 🚀 **Como Rodar o Projeto?**  
+
+Inicie o **microfrontend**:  
+```sh
+ng serve microfrontend-app --port 4201
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+Inicie o **shell (host)**:  
+```sh
+ng serve microfrontendFiap --port 4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Agora, o **shell (host)** pode carregar dinamicamente o **microfrontend** via Webpack Module Federation.  
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## 📚 **Mais Informações**  
+Se precisar de mais detalhes sobre a configuração e comunicação entre os microfrontends, consulte a [documentação oficial](https://angular.io/).  
 
-To build the project run:
+Se tiver dúvidas ou quiser melhorias no projeto, sinta-se à vontade para contribuir! 🚀💡  
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
