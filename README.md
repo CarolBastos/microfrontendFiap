@@ -34,14 +34,14 @@ Escolha se a aplicação será **Host (shell)** ou **Remote (microfrontend)** qu
 
 ## 🚀 **Como Rodar o Projeto?**  
 
-Inicie o **microfrontend**:  
+Inicie primeiramente o  **shell (host)**:  
 ```sh
-ng serve microfrontend-app --port 4201
+ng serve host-app --port 4200
 ```
 
-Inicie o **shell (host)**:  
+Inicie o **microfrontend-app**:  
 ```sh
-ng serve microfrontendFiap --port 4200
+ng serve microfrontend-app --port 4201
 ```
 
 Agora, o **shell (host)** pode carregar dinamicamente o **microfrontend** via Webpack Module Federation.  
