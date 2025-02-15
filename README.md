@@ -44,6 +44,12 @@ Inicie o **microfrontend-app**:
 ng serve microfrontend-app -o
 ```
 
+Para rodar ambas aplicações: 
+```sh
+npm run run:all
+```
+Rota principal: http://localhost:4200/home
+
 Agora, o **shell (host)** pode carregar dinamicamente o **microfrontend** via Webpack Module Federation.  
 
 ---

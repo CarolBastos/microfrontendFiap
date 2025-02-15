@@ -4,7 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:host": "ng serve host-app -o ",
+    "start:microfrontend": "ng serve microfrontend-app -o ",
     "build": "ng build",
+    "build:host-app": "ng build --configuration production --project=host-app",
+    "build:microfrontend-app": "ng build --configuration production --project=microfrontend-app",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
